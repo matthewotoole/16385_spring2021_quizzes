@@ -1,0 +1,116 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage}
+\usepackage{amsmath,amsopn}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{verbatim}
+\usepackage{setspace}
+\usepackage{gensymb}
+\usepackage{float}
+\usepackage[normalem]{ulem}
+%\usepackage[dvips,bookmarks=false,colorlinks,urlcolor=blue,pdftitle={
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{comment}
+
+\def\vO{{\bf O}}
+\def\vP{{\bf P}}
+\def\vp{{\bf p}}
+\def\vx{{\bf x}}
+\def\vl{{\bf l}}
+\def\mS{{\bf S}}
+\def\mT{{\bf T}}
+\def\mH{{\bf H}}
+\def\mA{{\bf A}}
+\def\tx{{\tilde{\bf x}}}
+\def\ta{{\tilde{\bf a}}}
+\def\tb{{\tilde{\bf b}}}
+\def\tc{{\tilde{\bf c}}}
+\def\hn{{\bf \hat{n}}}
+\def\hv{{\bf \hat{v}}}
+\def\hh{{\bf \hat{h}}}
+\def\vh{{\bf h}}
+\def\vs{{\bf s}}
+\def\hs{{\bf \hat{s}}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\ud}{\,\mathrm{d}}
+
+\usepackage[bookmarks=false,colorlinks,urlcolor=blue,pdftitle={Take-home Quiz 1},pdfauthor={Matthew O'Toole}]{hyperref}
+
+\begin{document}
+
+\begin{centering}
+	{\large 16-385 Computer Vision, Fall 2020\\}
+	\vspace{2ex}
+	{\LARGE Take-home Quiz 1\\}
+	\vspace{2ex}
+	{\large Due Date: Monday September 21, 2020 23:59 ET\\}
+\end{centering}
+
+\bigskip
+
+\section*{Question 1 \emph{\small(5 points)}}
+
+The continuous convolution of two functions
+$f\left(x\right)$ and $g\left(x\right)$ is given by
+\begin{equation}
+	\left(f \ast g \right)\left(x\right) = \int_{-\infty}^{+\infty} f\left(y\right)
+g\left(x - y\right) \ud y. \label{eq:continuous:convolution}
+\end{equation}
+The Gaussian function at scale $s$ is defined as
+\begin{equation}
+	G_s \left(x\right) = \frac{1}{\sqrt{2 \pi s}} \exp\left(-\frac{x^2}{2s}\right),
+\label{eq:gaussian}
+\end{equation}
+and has the property that
+\begin{equation}
+	\int_{-\infty}^{+\infty} G_s\left(x\right) \ud x = 1. \label{eq:norm}
+\end{equation}
+Prove that this class of functions satisfies the \emph{semigroup property}: the
+convolution of one Gaussian with another produces a third Gaussian with scale equal to
+their sum, or
+\begin{equation}
+	\left(G_{s_1} \ast G_{s_2}\right) \left(x\right) = G_{s_1 + s_2} \left(x\right).
+\label{eq:semi:group}
+\end{equation}
+  
+\section*{Question 2 \emph{\small(5 points)}}
+
+In lecture, we briefly discussed the convolution theorem, which states that the Fourier transform of the convolution of two functions is the product of their Fourier transforms:
+\begin{equation}
+\mathcal{F}\{f * g\} = \mathcal{F}\{f\}\mathcal{F}\{g\} ,
+\end{equation}
+where
+\begin{equation}
+\mathcal{F}\{f\}(k) = \int_{-\infty}^{\infty} f(x) e^{-i2\pi x k} dx
+\label{eq:fourier}
+\end{equation}
+is the Fourier transform of a continuous function $f(x)$.  Using the definitions of the convolution operation (Equation~\eqref{eq:continuous:convolution}) and Fourier transform (Equation~\eqref{eq:fourier}), prove that the convolution theorem holds true.
+
+
+\section*{Instructions}
+
+\begin{enumerate}
+    \item \textbf{Integrity and collaboration:} Students are encouraged to work
+    in groups but each student must submit their own work. If you work as a
+    group, include the names of your collaborators in your write up. Plagiarism
+    is strongly prohibited and may lead to failure of this course.
+
+    \item \textbf{Questions:} If you have any questions, please look at Piazza
+    first. Other students may have encountered the same problem, and it may be solved
+    already. If not, post your question on the discussion board. Teaching staff will
+    respond as soon as possible.
+
+    \item \textbf{Write-up:} Your write-up should be typeset in \LaTeX and should consist of your answers to the theory questions. Please note that we
+    \textbf{\color{red}do not} accept handwritten scans for your write-up in quizzes.
+
+    \item \textbf{Submission:} Your submission for this take-home quiz should be a
+    PDF file, \texttt{<andrew-id.pdf>}, with your write-up. \textbf{\color{red}Please do not submit ZIP files.}
+\end{enumerate}
+
+\end{document}
+
